@@ -8,6 +8,8 @@ Temiracle est un jeu, dont le but est de gagner un nombre maximal de points et d
 Au debut du jeu, tapez espace pour commencer, et profitez en pour redimensionnez le terminal avant de commencer a jouer. Ensuite vous devez choisir entre continuer une partie sauvegarde (tapez 'e') ou d'en commencer une nouvelle ('n') et ensuite tapez enter. Ensuite, vous allez devoir entrez votre pseudo, apres quoi vois allez pouvoir jouer. Tous les commandes possibles sont ecrits dans un tableau "Commandes", apres avoir mis votre action souhaite, tapez enter pour valider.
 
 
+C'est un projet académique collaboratif réalisé en binôme en 2024.
+
 ## Les regles
 
 A chaque etape, le jeu genere aleatoirement une nouvelle piece, que le joueur devra inserer sur le plateau de jeu. Il a deux possibilites : soit a gauche, soit a droite.
