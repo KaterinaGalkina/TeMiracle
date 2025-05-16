@@ -1,29 +1,28 @@
 # TeMiracle
 
-## Concernant le jeu
+**Please note: The game is in French.**
 
-Temiracle est un jeu, dont le but est de gagner un nombre maximal de points et de battre les scores des autres joueurs. Les regles sont simples : il faut placer les figures sur une ligne pour composer des occurences d'au moins 3 elements de meme couleur ou de meme figure. 
+## About the game
 
+TeMiracle is a game where the goal is to earn the highest possible score and beat other players’ records. The rules are simple: you place pieces in a line to form sequences of at least 3 elements of the same color or the same shape.
 
-Au debut du jeu, tapez espace pour commencer, et profitez en pour redimensionnez le terminal avant de commencer a jouer. Ensuite vous devez choisir entre continuer une partie sauvegarde (tapez 'e') ou d'en commencer une nouvelle ('n') et ensuite tapez enter. Ensuite, vous allez devoir entrez votre pseudo, apres quoi vois allez pouvoir jouer. Tous les commandes possibles sont ecrits dans un tableau "Commandes", apres avoir mis votre action souhaite, tapez enter pour valider.
+At the start of the game, press the space bar to begin. Take this opportunity to resize your terminal before playing. Then, choose whether to continue a saved game (press ‘e’) or start a new one (press ‘n’) and press Enter. Next, enter your nickname, and you can start playing. All possible commands are listed in the “Commands” table. After entering your desired action, press Enter to confirm.
 
+This is an academic collaborative project made by two people in 2024.
 
-C'est un projet académique collaboratif réalisé en binôme en 2024.
+## Rules
 
-## Les regles
+At each step, the game randomly generates a new piece that the player must insert onto the game board. You have two options: insert it on the left or on the right.
 
-A chaque etape, le jeu genere aleatoirement une nouvelle piece, que le joueur devra inserer sur le plateau de jeu. Il a deux possibilites : soit a gauche, soit a droite.
+If at least 3 consecutive pieces share the same color or the same shape, those 3 pieces disappear from the board.
 
-Si au moins 3 pieces consecutives ont la meme couleur ou la meme forme, alors les 3 pieces disparaissent du plateau de jeu.
+Besides inserting on the left or right, the player can perform shifts to enable removals that would otherwise be impossible. Specifically, you can shift all pieces of a certain shape or color to the left.
 
-En plus des insertions a gauche ou a droite, le joueur peut choisisr d'effectuer des decalages dans le but d'effectuer des suppressions non atteignables autrement. Ainsi on propose la possibilite de faire un decalage a gauche de toutes les pieces ayant une certaine forme, ou une certaine couleur.
+## Compilation
 
+To compile and run the project with the graphical interface, you need to install the Ncurses library.
 
-## Compilation 
-
-Pour pouvoir compiler et executer le projet avec l'inteface graphique vous avez besoin d'installer la bibliotheque Ncurses.
-
-### Sur MacOs
+### On macOS
 
 ```bash
 brew install ncurses
@@ -35,48 +34,46 @@ ou
 sudo port install ncurses 
 ```
 
-### Sur Linux
+### On Linux
 
 ```bash
 sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
 
-### Sur Windows 
+### On Windows 
 
-Ceci est un peu plus complexe sur ce systeme d'exploitation, comme c'est une resource propre a Linux, mais vous pouvez le faire en suivant les etapes qui sont indiques dans [ce lien](https://www.youtube.com/watch?v=DtHO5DBZQHw) par exemple (C'est un tutoriel sur Youtube).
+This is a bit more complex on Windows since Ncurses is a Linux-specific resource, but you can follow the steps shown in [this tutorial](https://www.youtube.com/watch?v=DtHO5DBZQHw) on YouTube.
 
 
-Ensuite, des que vous avez installe la bibliotheque, vous devez ouvrir le shell et vous placer dans le dossier qui contient tous les fichiers sources du projet. 
+Once the library is installed, open your shell and navigate to the folder containing all the project source files:
 
 ```bash
-cd cheminVersDossier/TeMiracle
+cd path/to/TeMiracle
 ```
 
 ## Execution
 
-Peu importe le systeme d'exploitation, compiler et executer en tappant les deux commandes suivantes dans le terminal :  
+Regardless of your operating system, compile and run the program by typing these two commands in the terminal:
 
 ```bash
 gcc -g -Wall main.c ListesS.c ListesD.c gestionFichiers.c commandesJeu.c affichage.c -o sortie -lncurses
 ```
+
 ```bash
 ./sortie
 ```
 
-### Attention !
+Warning!
+If you cannot install the required library and want to run the game without the interface, you can use the mainSansInterface.c file.
 
-Si vous ne pouvez pas installer la bibliotheque necessaire et vous voulez executer le jeu sans interafece,
-vous pouvez le faire avec le fichier mainSansInterface.c.
-
-Pour le faire il faut  executer les deux commandes suivantes: 
+To do so, execute these commands:
 
 ```bash
-gcc -g -Wall mainSansInteface.c ListesS.c ListesD.c gestionFichiers.c commandesJeu.c -o sortie2
+gcc -g -Wall mainSansInterface.c ListesS.c ListesD.c gestionFichiers.c commandesJeu.c -o sortie2
 ```
+
 ```bash
 ./sortie2
 ```
 
-Si vous executez le programme sans interface graphique et vous voulez voir le fichier avec les meilleurs joueurs
-classes par ordre croissant, vous pouvez suivre ce chemin dans le code source DonneesDuJeu/informationsGlobales et
-retrouvez la-dedans un fichier sous le nom de MeilleursScores.txt qui va contenir ces informations.
+If you run the program without the graphical interface and want to see the file with the best players ranked in ascending order, navigate to the following path in the source code DonneesDuJeu/informationsGlobales. There you will find a file named MeilleursScores.txt containing this information.
